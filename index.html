@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="menu">
+            <div class="logo">
+                Meow<span>Cha</span>
+            </div>
+            <ul>
+                <li>🏠 Home</li>
+                <li>😺 Meows</li>
+                <li class="active">🍵 Chas</li>
+                <li>❓ About Us</li>
+            </ul>
+        </div>
+        <div class="center">
+            <div class="search">
+                <div class="form">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search...">
+                    <button>Search</button>
+                </div>
+            </div>
+
+            <h2>MATCHAS</h2>
+            <div class="list">
+                <div class="item" data-key="1">
+                    <div class="img">
+                        <img src="images/menu1.png" alt="">
+                    </div>
+                    <div class="content">
+                        <div class="title">Roasted Matcha</div>
+                        <div class="des">
+                            A rich and aromatic blend of roasted matcha leaves, offering a deep and flavorful experience.
+
+                        </div>
+                        <div class="price">120.00</div>
+                        <input type="number" class="count" min="1" value="1">
+                        <button class="add">Add to cart</button>
+                        <button class="remove" onclick="Remove(1)"><i class="fa-solid fa-trash-can"></i></button>
+                    </div>
+                </div>
+
+                <div class="item" data-key="2">
+                    <div class="img">
+                        <img src="images/menu2.png" alt="">
+                    </div>
+                    <div class="content">
+                        <div class="title">Matcha Latte</div>
+                        <div class="des">
+                            A creamy and smooth beverage combining the vibrant taste of matcha with frothy milk, perfect for a comforting drink.
+                        </div>
+                        <div class="price">120.00</div>
+                        <input type="number" class="count" min="1" value="1">
+                        <button class="add">Add to cart</button>
+                        <button class="remove" onclick="Remove(2)"><i class="fa-solid fa-trash-can"></i></button>
+                    </div>
+                </div>
+
+                <div class="item" data-key="3">
+                    <div class="img">
+                        <img src="images/menu3.png" alt="">
+                    </div>
+                    <div class="content">
+                        <div class="title">Kuromitsu Matcha Latte</div>
+                        <div class="des">
+                            A delightful twist on the traditional matcha latte, infused with the sweet and smoky flavor of kuromitsu (Japanese black sugar syrup).
+                        </div>
+                        <div class="price">150.00</div>
+                        <input type="number" class="count" min="1" value="1">
+                        <button class="add">Add to cart</button>
+                        <button class="remove" onclick="Remove(3)"><i class="fa-solid fa-trash-can"></i></button>
+                    </div>
+                </div>
+                
+                <div class="item" data-key="4">
+                    <div class="img">
+                        <img src="images/menu4.png" alt="">
+                    </div>
+                    <div class="content">
+                        <div class="title">Matcha Cream Latte</div>
+                        <div class="des">
+                            Indulge in a luxurious combination of velvety cream and earthy matcha, creating a decadent and satisfying drink.                        </div>
+                        <div class="price">160.00</div>
+                        <input type="number" class="count" min="1" value="1">
+                        <button class="add">Add to cart</button>
+                        <button class="remove" onclick="Remove(4)"><i class="fa-solid fa-trash-can"></i></button>
+                    </div>
+                </div>
+
+                                
+                <div class="item" data-key="4">
+                    <div class="img">
+                        <img src="images/menu5.png" alt="">
+                    </div>
+                    <div class="content">
+                        <div class="title">Matcha Cheese Latte</div>
+                        <div class="des">
+                            Experience a unique blend of creamy cheese and bold matcha flavors, offering a harmonious balance of richness and freshness.
+                        </div>
+                        <div class="price">160.00</div>
+                        <input type="number" class="count" min="1" value="1">
+                        <button class="add">Add to cart</button>
+                        <button class="remove" onclick="Remove(4)"><i class="fa-solid fa-trash-can"></i></button>
+                    </div>
+                </div>
+
+                                
+                <div class="item" data-key="4">
+                    <div class="img">
+                        <img src="images/menu6.png" alt="">
+                    </div>
+                    <div class="content">
+                        <div class="title">Matcha Float</div>
+                        <div class="des">
+                            A refreshing treat featuring creamy matcha ice cream floating in a bed of chilled matcha tea, delivering a delightful contrast of textures and temperatures.
+                        </div>
+                        <div class="price">165.00</div>
+                        <input type="number" class="count" min="1" value="1">
+                        <button class="add">Add to cart</button>
+                        <button class="remove" onclick="Remove(4)"><i class="fa-solid fa-trash-can"></i></button>
+                    </div>
+                </div>
+
+                
+
+                
+            </div>
+        </div>
+        <div class="cart">
+            <div class="name">CART</div>
+            <div class="listCart"></div>
+            
+            <!-- Customer information and payment -->
+            <div class="customer-info">
+                <p><b>Customer's Information</b></p>
+                <input type="text" id="name" placeholder="Name">
+                <input type="text" id="address" placeholder="Address">
+                <input type="text" id="contact" placeholder="Contact Number">
+                <input type="number" id="cash" placeholder="Cash">
+                <button onclick="submitOrder()">Submit</button>
+             </div>
+    </div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+          <span class="close" onclick="closePopup()">&times;</span>
+          <div id="invoice"></div>
+        </div>
+      </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
